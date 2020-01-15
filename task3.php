@@ -26,17 +26,17 @@ if(!isset($_SESSION['uname']))
   </head>
   <body>
     <h3>q parameters are supported upto 3 from this page</h3>
+    <!-- final form for having all the tasks -->
     <form  action="3back.php" method="post" enctype="multipart/form-data">
       <input type="text" id="fname" name="fname" placeholder="Enter your first Name" ><br>
       <input type="text"  id="lname" name="lname" placeholder="Enter your last Name" ><br>
       <input type="text" id="full" name="fullname" placeholder="Full Name" disabled  ><br>
-    <i>+91</i>  <input type="text" name="cno" maxlength=10 minlength=10 placeholder="enter number of 10 digits"><br>
-      <textarea id="marks" rows="7" cols="50" name="marks">
-</textarea><br>
-<input type="text" name="email" placeholder="Enter ur email id"> <br><br>
-<input type="file" name="image" ><br>
-<input type="submit" name="submit"><br>
-<a href="logout.php">Logout</a>
+      <i>+91</i> <input type="text" name="cno" maxlength=10 minlength=10 placeholder="enter number of 10 digits"><br>
+      <textarea id="marks" rows="7" cols="50" name="marks"></textarea><br>
+      <input type="text" name="email" placeholder="Enter ur email id"> <br><br>
+      <input type="file" name="image" ><br>
+      <input type="submit" name="submit"><br>
+      <a href="logout.php">Logout</a>
 
     </form>
 

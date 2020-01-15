@@ -1,14 +1,17 @@
 <?php
-session_start();
-if( !isset($_SESSION['uname'])){
-  header('location: validation.php');
-}
+  session_start();
+  // securing the route
+  if( !isset($_SESSION['uname']))
+  {
+    header('location: validation.php');
+  }
 ?>
 <?php
- if(isset($_GET['q'])){
-  $a=$_GET['q'];
-  header("location: $a.php");
-}
+  //enabling support for query parameters
+   if(isset($_GET['q'])){
+    $a=$_GET['q'];
+    header("location: $a.php");
+  }
 ?>
 <!-- dummy content for test -->
 

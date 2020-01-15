@@ -1,9 +1,9 @@
 <?php
-session_start();
-// securing route
-if( !isset($_SESSION['uname'])){
-  header('location: validation.php');
-}
+  session_start();
+  // securing route
+  if( !isset($_SESSION['uname'])){
+    header('location: validation.php');
+  }
 ?>
 <?php
 // enable support for query parameter
