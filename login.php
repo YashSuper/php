@@ -1,9 +1,11 @@
 <?php
-  session_start();
-  //if already logged in then redirect to task page
-  if( isset($_SESSION['uname'])){
-    header('location: task3.php');
-  }
+
+    session_start();
+    //if already logged in then redirect to task page
+    if( isset($_SESSION['uname'])){
+      header('location: task3.php');
+    }
+
 ?>
 
 <!-- render the form and submit it for checking the session's username and password -->
