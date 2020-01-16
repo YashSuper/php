@@ -1,19 +1,33 @@
 <?php
-  //start the session
-  session_start();
   //current user flag
   $cur_user=null;
-  // users array : in live project these values have to be fetched from database.
-  $users=array("ankit"=>"MTIzNA==","Yash"=>"MTIzNA==","hemant"=>"MTIzNA=="); // base 64 encode for "1234" is "MTIzNA=="
-  // set the session variable if the entries are correct
+// SQL FETCH
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+
+  // Create connection
+  $conn = mysqli_connect($servername, $username, $password);
+
+  // Check connection
+  if (!$conn) {
+     die("Connection failed: " . mysqli_connect_error());
+  }
+  echo "Connected successfully";
+
+
   if (isset($_POST['uname']))
   {
-      $cur_user=$_POST['uname'];
-      if (array_key_exists($cur_user,$users))
+    session_start();
+    mysqli_select_db($conn,'users');
+    $q="select * from users WHERE uname =". $_POST['uname'];
+    $res=mysqli_query($conn,$q);
+      if (mysqli_num_rows($res)!=0)
       {
-          if($users[$cur_user]==base64_encode($_POST['pass']))
+        $tempuser = mysqli_fetch_array($res);
+          if($tempuser['pass']==base64_encode($_POST['pass']))
           {
-              $_SESSION['uname']=$cur_user;
+              $_SESSION['uname']=$tempuser['uname'];
           }
       }
   }
