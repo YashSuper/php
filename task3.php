@@ -1,3 +1,5 @@
+<!-- Final task file -->
+
 <?php
 //Start the session
 session_start();

@@ -1,3 +1,5 @@
+<!-- BackEnd file for signup form validation and its database processing  -->
+
 <?php
   if(isset($_POST['username'])){
     $uname=$_POST['username'];

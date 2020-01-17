@@ -1,3 +1,4 @@
+<!-- login form render file -->
 <?php
 session_start();
 //if already logged in then redirect to task page
