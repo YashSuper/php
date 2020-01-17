@@ -6,18 +6,9 @@
   if (isset($_POST['uname']))
   {   $cur_user=$_POST['uname'];
       // SQL CREDENTIALS
-      $servername = "localhost";
-      $username = "root";
-      $password = "";
-      // Create connection
-      $conn = mysqli_connect($servername, $username, $password);
-      // Check connection
-      if (!$conn) {
-         die("Connection failed: " . mysqli_connect_error());
-      }
-      mysqli_select_db($conn,'users');
+      include('db.php');
       $q="select * from users WHERE uname ='$cur_user'";
-      $res=mysqli_query($conn,$q);
+      $res=mysqli_query($con,$q);
       if (mysqli_num_rows($res)!=0)
       {
         $tempuser = mysqli_fetch_array($res);
